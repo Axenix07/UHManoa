@@ -1,0 +1,9 @@
+Add Method:
+    Worst-case: O(n) When inserting at the end of the list, iterating through all elements.
+    Best-case: O(1) When inserting at the head of the list.
+    Average-case: O(n) Typically inserting somewhere in the middle, requiring traversal.
+
+Remove Method:
+    Worst-case: O(n) When removing an element at the end.
+    Best-case: O(1) When removing the first element.
+    Average-case: O(n) Requires traversal to locate the node to remove.

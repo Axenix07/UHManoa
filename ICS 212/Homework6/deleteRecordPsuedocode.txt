@@ -1,0 +1,29 @@
+define a pointer to record called temp
+define a pointer to record called prev
+define an int called result
+
+copy from -1 to result
+copy from NULL to temp
+
+if( start is not equal to NULL )
+    copy from 0 to result
+    copy from start to temp
+    copy from NULL to prev
+
+while( temp is not equal to NULL )
+
+    if( accountno in the record whose address is in temp is equal to uaccountno )
+
+        if( prev is equal to NULL )
+            copy from next in the record whose address is in temp to start
+
+        else
+            copy from next in the record whose address is in temp to next in the record whose address is in prev
+
+        release the space whose address is in temp
+
+    else
+        copy from temp to prev
+        copy from next in the record whose address is in temp to temp
+
+return result

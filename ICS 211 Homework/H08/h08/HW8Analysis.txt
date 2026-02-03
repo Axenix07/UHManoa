@@ -1,0 +1,13 @@
+ArrayList (Backed by an array)
+	Best-case, worst-case, and average-case: O(1)
+	ArrayList.get(index) is a direct array access (O(1)), so next() runs in constant time.
+	
+Singly Linked List
+    Best-case: O(1) (If cursor stays at or near the beginning)
+    Worst-case: O(n) (If cursor is near the end, requiring traversal from the head)
+    Average-case: O(n) (Since each next() call has to traverse from the head up to cursor, iterating through the entire list takes O(n) in total)
+    
+Doubly Linked List
+    Best-case: O(1) (If cursor stays near the beginning or if the list implementation optimizes traversal)
+    Worst-case: O(n) (If the get() method starts traversal from the head)
+    Average-case: O(n) (If get() is not optimized)

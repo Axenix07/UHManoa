@@ -1,0 +1,25 @@
+fib3(milli):
+26: 3
+28: 8
+30: 25
+32: 89
+34: 296
+
+fib3WithHelper(nano):
+26:1417
+28:792
+30:1250
+32:833
+34:4792
+
+fib3Iterative(nano):
+26:1125
+28:625
+30:583
+32:709
+34:666
+
+fib3WithHelper and fib3Iterative were very difficult to measure because my computer ran them too fast to measure in milliseconds.  I tried using nano seconds, but the trends were
+a little rough to see on a small scale like what was used for fib3.  If you used an extremely large scale you could see a general linear trend, but it was a little rough to tell 
+and there were spikes and peaks in the data.  Based on the data I was able to get and my understanding of the methods I can tell that both scaled linearly or O(n), and fib3Iterative
+looked to be slightly more efficient on average. fib3 was much easier to measure, and I was able to get easily measurable trends.  It scales exponentially, or O(2^n).

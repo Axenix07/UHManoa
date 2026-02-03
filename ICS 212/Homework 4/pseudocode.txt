@@ -1,0 +1,53 @@
+--------------------------------------------------------------------------------
+addRecord
+
+*** Assume the following variables are already defined. ***
+
+- start: The pointer to the first record of the list (or NULL) (assuming start is already dereferenced from record **)
+- uaccountno: The user's account number (integer)
+- uname: a character array containing the user's name
+- uaddress: a character array containing the user's address
+--------------------------------------------------------------------------------
+
+* WRITE YOUR PSEUDOCODE HERE
+
+define a pointer to record called pTemp
+define an int called continue
+copy from 1 to continue
+
+if (start is equal to NULL || accountno in the record whose address is in start > uaccountno)
+    allocate a heap space and store its address into pTemp
+    copy from uaccountno to accountno in the record whose address is in pTemp
+    copy from uname to name in the record whose address is in pTemp
+    copy from uaddress to address in the record whose address is in pTemp
+    copy from start to next in the record whose address is in pTemp
+    copy from pTemp to start
+    copy from 0 to continue
+
+else
+    define a pointer to record called pCurrent
+    define a pointer to record called pNext
+
+    copy from start to pCurrent
+    copy from next in the the record whose address is in pCurrent to pNext
+
+    while (accountno in the record whose address is in pCurrent <= uaccountno && continue == 1)
+
+        if (uaccountno == acountno in the record whose address is in pCurrent)
+            copy from -1 to continue
+
+        else if (next in the record whose address is in pCurrent is equal to NULL || accountno in the record whose address is in pNext > uaccountno)
+            allocate a heap space and store its address into pTemp
+            copy from uaccountno to accountno in the record whose address is in pTemp
+            copy from uname to name in the record whose address is in pTemp
+            copy from uaddress to address in the record whose address is in pTemp
+            copy from next in the record whose address is in pCurrent to next in the record whose address is in pTemp
+            copy from pTemp to next in the record whose address is in pCurrent
+            copy from 0 to continue
+
+        else
+            copy from pNext to pCurrent
+            copy from next in the the record whose address is in pCurrent to pNext
+
+return continue
+
