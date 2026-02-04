@@ -673,6 +673,7 @@ function percentageHawaiian(data: UhData[]): number {
 const listCampuses = (data: UhData[]): string[] => (data.map((item) => item.campus))
 const totalDegreesByCampus = (data: UhData[], campus: string):number => data.filter((item) => item.campus === campus).reduce((acc, cur) => acc + cur.awards, 0)
 
+const listCampusDegrees = (data: UhData[]): Object[] => data.map()
 console.log(totalDegrees(uhdata));
 console.log(percentageHawaiian(uhdata));
 console.log(listCampuses(uhdata));
