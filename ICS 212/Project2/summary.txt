@@ -1,0 +1,7 @@
+Everything worked as expected from testing except for an issue with writefile, so unless I missed a usecase it should be good.
+The writefile issue was that it would add a new line to the address everytime it was called, so the address gets pretty long over time.
+I had a fix using pop_back from the string class that should work, but because UH Unix uses gcc version 4.8.5 not all of the string methods are included.
+Both pop_back and stoi where missing from my string class so I wasn't able to use that fix.  I also had to use atoi to convert a string to an int from
+the cstdlib because stoi wasn't included in my string class.
+
+I implemented a copy constructor for the extra credit.

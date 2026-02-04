@@ -1,0 +1,75 @@
+Script started on Mon 03 Nov 2025 11:39:20 PM HST
+]0;austinwg@uhx02:~/bankdatabase[?1034huhx02:/home/a/austinwg/bankdatabase% ./homework3 
+Welcome to the Bank Database Application
+
+Please choose one of the following options by typing in the name of the function:
+add: Add a new record in the database
+printall: Print all records in the database
+find: Find record(s) with a specified account #
+delete: Delete existing record(s) from the database using the account # as a key
+quit: Quit the program
+a
+Please enter the account number for the new account.  It must be a positive integer.
+123
+Please enter the customer's name for this record
+Jazz Hands
+Please enter the address for this account.
+Enter 'done' on it's own line when you are finished entering the address
+12 Music St
+Country Mile
+done
+The user was successfully added.
+Please choose one of the following options by typing in the name of the function:
+add: Add a new record in the database
+printall: Print all records in the database
+find: Find record(s) with a specified account #
+delete: Delete existing record(s) from the database using the account # as a key
+quit: Quit the program
+p
+Account Number: 123
+Name: Jazz Hands
+Address: 12 Music St
+Country Mile
+
+Please choose one of the following options by typing in the name of the function:
+add: Add a new record in the database
+printall: Print all records in the database
+find: Find record(s) with a specified account #
+delete: Delete existing record(s) from the database using the account # as a key
+quit: Quit the program
+f
+Please enter the number for the account you want to find.
+123
+Account Number: 123
+Name: Jazz Hands
+Address: 12 Music St
+Country Mile
+
+Please choose one of the following options by typing in the name of the function:
+add: Add a new record in the database
+printall: Print all records in the database
+find: Find record(s) with a specified account #
+delete: Delete existing record(s) from the database using the account # as a key
+quit: Quit the program
+d
+Please enter the number for the account you want to delete.
+12
+Please choose one of the following options by typing in the name of the function:
+add: Add a new record in the database
+printall: Print all records in the database
+find: Find record(s) with a specified account #
+delete: Delete existing record(s) from the database using the account # as a key
+quit: Quit the program
+exit
+Please enter a valid command.
+Please choose one of the following options by typing in the name of the function:
+add: Add a new record in the database
+printall: Print all records in the database
+find: Find record(s) with a specified account #
+delete: Delete existing record(s) from the database using the account # as a key
+quit: Quit the program
+q
+]0;austinwg@uhx02:~/bankdatabaseuhx02:/home/a/austinwg/bankdatabase% exit
+exit
+
+Script done on Mon 03 Nov 2025 11:40:34 PM HST
