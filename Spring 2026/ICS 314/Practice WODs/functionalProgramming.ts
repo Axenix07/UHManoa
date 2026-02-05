@@ -681,12 +681,12 @@ interface CampusTotal {
 }
 
 function listCampusDegrees(data: UhData[]): CampusTotal[] {
-  const groupedByCampus = Object.groupBy(data, (item) => item.campus);
+  const groupedByCampus = Object.groupBy(data, (item: { campus: any; }) => item.campus);
 
   const results: CampusTotal[] = [];
 
   for (const [campusName, entries] of Object.entries(groupedByCampus)) {
-    const totalDegrees = (entries ?? []).reduce((sum, entry) => sum + entry.awards, 0);
+    const totalDegrees = (entries ?? []).reduce((sum: any, entry: { awards: any; }) => sum + entry.awards, 0);
 
     results.push({
       campus: campusName,
