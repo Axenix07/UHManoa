@@ -1,12 +1,12 @@
+/* eslint-disable */ 
 function estimateTw(temp: number, relativeHumid: number): number {
-  let wetTemp =
-    temp * Math.atan(0.151977 * Math.pow(relativeHumid + 8.313659, 0.5)) +
-    Math.atan(temp + relativeHumid) -
-    Math.atan(relativeHumid - 1.676331) +
-    0.00391838 *
-      Math.pow(relativeHumid, 1.5) *
-      Math.atan(0.023101 * relativeHumid) -
-    4.686035;
+  const wetTemp = temp * Math.atan(0.151977 * (relativeHumid + 8.313659) ** 0.5)
+    + Math.atan(temp + relativeHumid)
+    - Math.atan(relativeHumid - 1.676331)
+    + 0.00391838
+      * relativeHumid ** 1.5
+      * Math.atan(0.023101 * relativeHumid)
+    - 4.686035;
   // in °C
   return wetTemp;
 }
@@ -14,7 +14,7 @@ function estimateTw(temp: number, relativeHumid: number): number {
 function wbgt(temp: number, relativeHumid: number): string {
   let wetBulbTemp: number;
   if (relativeHumid < 0 || relativeHumid > 100) {
-    return `Please enter a humidity between 0% and 100%.`;
+    return 'Please enter a humidity between 0% and 100%.';
   }
   wetBulbTemp = estimateTw(temp, relativeHumid);
   let warning: string;
@@ -23,25 +23,25 @@ function wbgt(temp: number, relativeHumid: number): string {
   let rest: number;
   let hydrate: string;
   if (wetBulbTemp <= 24.9) {
-    riskLevel = `None`;
+    riskLevel = 'None';
     hike = 60;
     rest = 15;
-    hydrate = `1/3`;
+    hydrate = '1/3';
   } else if (wetBulbTemp <= 27.7) {
-    riskLevel = `Low`;
+    riskLevel = 'Low';
     hike = 60;
     rest = 15;
-    hydrate = `3/4`;
+    hydrate = '3/4';
   } else if (wetBulbTemp <= 29.4) {
-    riskLevel = `Moderate`;
+    riskLevel = 'Moderate';
     hike = 40;
     rest = 20;
-    hydrate = `1`;
+    hydrate = '1';
   } else {
-    riskLevel = `High`;
+    riskLevel = 'High';
     hike = 30;
     rest = 30;
-    hydrate = `1`;
+    hydrate = '1';
   }
 
   warning = `WBGT: ${wetBulbTemp}°C Risk Level: ${riskLevel} Recommendation: Hike ${hike}, rest ${rest}, hydrate at least ${hydrate} qt per hour.`;

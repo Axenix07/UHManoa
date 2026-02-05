@@ -14,7 +14,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: 'ICS 314/tsconfig.json',
+    project: 'tsconfig.json',
   },
   plugins: ["only-warn"],
   rules: {

@@ -1,3 +1,4 @@
+/* eslint-disable */ 
 type Job = {
   employerName: string;
   address: string;

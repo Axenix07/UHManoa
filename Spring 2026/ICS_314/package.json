@@ -15,8 +15,8 @@
   "type": "commonjs",
   "main": ".eslintrc.js",
   "scripts": {
-    "lint": "eslint *.ts",
-    "lint-fix": "eslint **/*.ts --fix",
+    "lint": "eslint **/*.ts",
+    "lintfix": "eslint **/*.ts --fix",
     "test": "jest",
     "coverage": "jest --coverage"
   },

@@ -1,38 +1,38 @@
+/* eslint-disable */ 
 class Round {
   public team1: number[];
+
   public team2: number[];
+
   constructor(team1: number[], team2: number[]) {
     this.team1 = team1;
     this.team2 = team2;
   }
 
   public scoreTeam1(): number {
-    const sum: number = this.team1.reduce((accumulator, currentValue) => {
-      return accumulator + currentValue;
-    }, 0);
+    const sum: number = this.team1.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
     return sum;
   }
+
   public scoreTeam2(): number {
-    const sum: number = this.team2.reduce((accumulator, currentValue) => {
-      return accumulator + currentValue;
-    }, 0);
+    const sum: number = this.team2.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
     return sum;
   }
 }
 
 class Game {
   public team1Score: number = 0;
+
   public team2Score: number = 0;
+
   public rounds: Round[] = [];
 
   public addRound(round: Round) {
     this.rounds.push(round);
     if (round.scoreTeam1() > round.scoreTeam2()) {
-      this.team1Score =
-        this.team1Score + round.scoreTeam1() - round.scoreTeam2();
+      this.team1Score = this.team1Score + round.scoreTeam1() - round.scoreTeam2();
     } else if (round.scoreTeam2() > round.scoreTeam1()) {
-      this.team2Score =
-        this.team2Score + round.scoreTeam2() - round.scoreTeam1();
+      this.team2Score = this.team2Score + round.scoreTeam2() - round.scoreTeam1();
     }
   }
 
@@ -46,12 +46,11 @@ class Game {
 
   public getWinner(): string {
     if (this.team1Score > this.team2Score && this.team1Score >= 21) {
-      return `Team 1`;
-    } else if (this.team2Score > this.team1Score && this.team2Score >= 21) {
-      return `Team 2`;
-    } else {
-      return `No Winner`;
+      return 'Team 1';
+    } if (this.team2Score > this.team1Score && this.team2Score >= 21) {
+      return 'Team 2';
     }
+    return 'No Winner';
   }
 }
 

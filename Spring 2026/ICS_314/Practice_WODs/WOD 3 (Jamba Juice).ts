@@ -1,14 +1,18 @@
+/* eslint-disable */ 
 class MenuItem {
   public itemName: string;
+
   public ingredients: string[];
+
   public prices: number[];
+
   public calories: number[];
 
   constructor(
     name: string,
     ingredients: string[],
     prices: number[],
-    calories: number[]
+    calories: number[],
   ) {
     this.itemName = name;
     this.ingredients = ingredients;
@@ -30,12 +34,13 @@ class Menu {
   }
 
   findMenuItems(item: string): MenuItem[] {
-    let foundItems: MenuItem[] = [];
+    const foundItems: MenuItem[] = [];
     for (let i = 0; i < this.menuItems.length; i++) {
-      for (let j = 0; j < this.menuItems[i].ingredients.length; j++)
+      for (let j = 0; j < this.menuItems[i].ingredients.length; j++) {
         if (this.menuItems[i].ingredients[j].toLowerCase == item.toLowerCase) {
           foundItems.push(this.menuItems[i]);
         }
+      }
     }
     return foundItems;
   }
@@ -43,10 +48,12 @@ class Menu {
 
 class Drink {
   public menuItem: MenuItem;
+
   public price: number;
+
   public calories: number;
 
-  constructor(menuItem: MenuItem, size: "small" | "medium" | "large") {
+  constructor(menuItem: MenuItem, size: 'small' | 'medium' | 'large') {
     const index = SizeIndex[size];
     this.menuItem = menuItem;
     this.price = menuItem.prices[index];
@@ -73,28 +80,28 @@ class Inventory {
 }
 
 const papayaSunrise = new MenuItem(
-  "PapayaSunrise",
-  ["Papaya", "Strawberry", "Peach"],
+  'PapayaSunrise',
+  ['Papaya', 'Strawberry', 'Peach'],
   [5.15, 5.75, 6.55],
-  [190, 280, 330]
+  [190, 280, 330],
 );
 const peachPerfection = new MenuItem(
-  "PeachPerfection",
-  ["Peach", "Mango", "Strawberry"],
+  'PeachPerfection',
+  ['Peach', 'Mango', 'Strawberry'],
   [5.15, 5.75, 6.55],
-  [210, 320, 360]
+  [210, 320, 360],
 );
 const strawberryDragon = new MenuItem(
-  "StrawberryDragon",
-  ["Pitaya", "Strawberry", "Orange", "Passionfruit", "Mango", "Banana"],
+  'StrawberryDragon',
+  ['Pitaya', 'Strawberry', 'Orange', 'Passionfruit', 'Mango', 'Banana'],
   [5.15, 5.75, 6.55],
-  [360, 480, 610]
+  [360, 480, 610],
 );
 const strawberryWhirl = new MenuItem(
-  "StrawberryWhirl",
-  ["Strawberry", "Banana", "Apple"],
+  'StrawberryWhirl',
+  ['Strawberry', 'Banana', 'Apple'],
   [5.15, 5.75, 6.55],
-  [210, 310, 380]
+  [210, 310, 380],
 );
 
 const menu = new Menu([
@@ -110,8 +117,8 @@ enum SizeIndex {
   large = 2,
 }
 
-const myLargePapaya = new Drink(papayaSunrise, "large"); // Should be $6.55, 330 cal
-const mySmallPeach = new Drink(peachPerfection, "small"); // Should be $5.15, 210 cal
+const myLargePapaya = new Drink(papayaSunrise, 'large'); // Should be $6.55, 330 cal
+const mySmallPeach = new Drink(peachPerfection, 'small'); // Should be $5.15, 210 cal
 
 const myOrder = new Order();
 myOrder.orderDrink(myLargePapaya);
