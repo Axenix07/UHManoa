@@ -673,7 +673,30 @@ function percentageHawaiian(data: UhData[]): number {
 const listCampuses = (data: UhData[]): string[] => (data.map((item) => item.campus))
 const totalDegreesByCampus = (data: UhData[], campus: string):number => data.filter((item) => item.campus === campus).reduce((acc, cur) => acc + cur.awards, 0)
 
-const listCampusDegrees = (data: UhData[]): Object[] => data.map()
+const listCampusDegrees = (data: UhData[]): Object[] => data.map(item=>({"campus": item.campus, "degrees": item.awards}))
+
+interface UHData {
+  campus: string;
+  degrees: number;
+}
+
+function maxDegrees(data: UHData[]): number {
+  const degreesPerCampus: Record<string, number> = {};
+
+  data.forEach((entry) => {
+    const { campus, degrees } = entry;
+    
+    if (degreesPerCampus[campus]) {
+      degreesPerCampus[campus] += degrees;
+    } else {
+      degreesPerCampus[campus] = degrees;
+    }
+  });
+
+  const totals = Object.values(degreesPerCampus);
+
+  return totals.length > 0 ? Math.max(...totals) : 0;
+}
 console.log(totalDegrees(uhdata));
 console.log(percentageHawaiian(uhdata));
 console.log(listCampuses(uhdata));
