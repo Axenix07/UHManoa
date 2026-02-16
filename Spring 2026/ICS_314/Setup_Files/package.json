@@ -1,0 +1,34 @@
+{
+  "name": "ics-314",
+  "version": "1.0.0",
+  "description": "ICS 314 work",
+  "homepage": "https://github.com/Axenix07/UHManoa#readme",
+  "bugs": {
+    "url": "https://github.com/Axenix07/UHManoa/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Axenix07/UHManoa.git"
+  },
+  "license": "ISC",
+  "author": "Austin Gardner",
+  "type": "commonjs",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "lint": "eslint **/*.ts",
+    "lintfix": "eslint **/*.ts --fix",
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-only-warn": "^1.1.0",
+    "prettier": "^3.8.1",
+    "prettier-eslint": "^16.4.2"
+  }
+}
