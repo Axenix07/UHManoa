@@ -30,5 +30,8 @@
     "eslint-plugin-only-warn": "^1.1.0",
     "prettier": "^3.8.1",
     "prettier-eslint": "^16.4.2"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8"
   }
 }
